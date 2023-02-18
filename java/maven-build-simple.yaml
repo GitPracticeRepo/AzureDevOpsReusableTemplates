@@ -31,7 +31,6 @@ steps:
       jdkVersionOption: "${{ parameters.jdkVersion }}"
   - task: PublishBuildArtifacts@1
     inputs:
-      PathToPublish: "${{ parameters.pathToPublish }}"
+      PathtoPublish: "${{ parameters.pathToPublish }}"
       ArtifactName: 'drop'
       publishLocation: 'Container'
-      
