@@ -22,7 +22,7 @@ parameters:
     default: gameoflife-web/target/gameoflife.war
   - name: authenticateMavenFeed
     type: boolean
-    default: yes
+    default: true
 
 steps:
   - task: Maven@3
