@@ -16,6 +16,10 @@ parameters:
     displayName: mavenPOMFile
     type: string
     default: 'pom.xml'
+  - name: pathToPublish
+    displayName: Path To Publish
+    type: string
+    default: gameoflife-web/target/gameoflife.war
 
 steps:
   - task: Maven@3
@@ -25,3 +29,9 @@ steps:
       publishJUnitResults: yes
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       jdkVersionOption: "${{ parameters.jdkVersion }}"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathToPublish: "${{ parameters.pathToPublish }}"
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+      
