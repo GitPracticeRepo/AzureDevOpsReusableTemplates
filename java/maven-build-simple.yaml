@@ -8,6 +8,7 @@ parameters:
       - clean
       - install
       - compile
+      - deploy
   - name: jdkVersion
     displayName: 'Java Version'
     type: string
